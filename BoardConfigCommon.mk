@@ -71,7 +71,7 @@ BOARD_BRCM_HCI_NUM := 26
 TARGET_USES_64_BIT_BINDER := true
 
 # Camera
-TARGET_USES_MEDIA_EXTENSIONS := true
+# TARGET_USES_MEDIA_EXTENSIONS := true
 
 # GPS
 TARGET_PROVIDES_GPS_LOC_API := true
@@ -108,15 +108,19 @@ WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/credmgrd|/system/vendor/lib/libshims_signal.so \
-    /system/vendor/bin/iddd|/system/vendor/lib/libshims_idd.so \
-    /system/vendor/bin/suntrold|/system/vendor/lib/libshims_signal.so \
-    /system/lib/hw/camera.vendor.qcom.so|/system/vendor/lib/libsonycamera.so \
-    /system/vendor/bin/mm-qcamera-daemon|libandroid.so \
-    /system/lib/libcammw.so|libsensor.so \
-    /system/lib/libsomc_chokoballpal.so|/system/vendor/lib/libshim_camera.so \
-    /system/lib/libcald_pal.so|/system/vendor/lib/libshim_cald.so \
-    /system/lib/hw/camera.vendor.qcom.so|libsensor.so
+	/system/vendor/bin/credmgrd|/system/vendor/lib/libshims_signal.so \
+	/system/vendor/bin/iddd|/system/vendor/lib/libshims_idd.so \
+	/system/vendor/bin/suntrold|/system/vendor/lib/libshims_signal.so \
+	/system/lib/hw/camera.vendor.qcom.so|/system/vendor/lib/libsonycamera.so \
+	/system/lib/hw/camera.vendor.qcom.so|/system/vendor/lib/libshim_camera.so \
+	/system/lib/hw/camera.vendor.qcom.so|/system/vendor/lib/libshim_cald.so \
+	/system/lib/hw/camera.vendor.qcom.so|libsensor.so \
+	/system/lib/libcald_pal.so|/system/vendor/lib/libshim_cald.so \
+	/system/lib/libcammw.so|/system/vendor/lib/libshim_cald.so \
+	/system/lib/libcammw.so|libsensor.so \
+	/system/lib/libsomc_chokoballpal.so|/system/vendor/lib/libshim_camera.so \
+	/system/vendor/bin/mm-qcamera-daemon|/system/vendor/lib/libc_util.so \
+	/system/vendor/bin/mm-qcamera-daemon|libandroid.so
 
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072
