@@ -56,8 +56,11 @@ PRODUCT_COPY_FILES += \
 
 # Camera (stock .575 blobs)
 PRODUCT_PACKAGES += \
-	tad_static \
-	wait4tad_static 
+    tad_static \
+    wait4tad_static \
+    libshim_cald \
+    libc_util \
+    libshim_camera
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/vendor/bin/credmgrfirstboot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/credmgrfirstboot.sh
@@ -84,7 +87,11 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
    libbt-vendor   
-   
+
+# BoringSSL hacks
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+    
 # RIL
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/netmgr_config.xml:system/etc/data/netmgr_config.xml \
@@ -164,3 +171,4 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bc
 
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/shinano-common/shinano-common-vendor.mk)
+$(call inherit-product, vendor/sony/widevine/widevine.mk)
