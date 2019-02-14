@@ -56,11 +56,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera (stock .575 blobs)
 PRODUCT_PACKAGES += \
-    tad_static \
-    wait4tad_static \
-    libshim_cald \
-    libc_util \
-    libshim_camera
+	tad_static \
+	wait4tad_static 
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/vendor/bin/credmgrfirstboot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/credmgrfirstboot.sh
